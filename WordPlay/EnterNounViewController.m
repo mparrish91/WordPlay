@@ -29,11 +29,12 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([self.nounTextField.text isEqualToString:@" "]) {
+    if (![self.nounTextField.text isEqualToString:@" "]) {
         EnterAdjectiveViewController *enterAdjectiveViewController = segue.destinationViewController;
+        enterAdjectiveViewController.noun = self.nounTextField.text;
         enterAdjectiveViewController.name = self.name;
         enterAdjectiveViewController.verb = self.verb;
-        enterAdjectiveViewController.noun = self.nounTextField.text;
+
     }
     
 

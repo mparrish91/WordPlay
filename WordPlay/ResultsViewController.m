@@ -30,8 +30,8 @@
     [attString addAttribute:NSFontAttributeName value:boldFont range:NSMakeRange(0, [self.name length])];
     [attString addAttribute:NSFontAttributeName value:boldFont range:NSMakeRange(15, [self.verb length])];
     [attString addAttribute:NSFontAttributeName value:boldFont range:NSMakeRange(34, [self.noun length])];
-    [attString addAttribute:NSFontAttributeName value:boldFont range:NSMakeRange([infoString length], [self.adjective length])];
-    
+    [attString addAttribute:NSFontAttributeName value:boldFont range:NSMakeRange(([infoString length] - 1), [self.adjective length])];
+          
     [attString endEditing];
 
     self.resultsTextView.attributedText = attString;

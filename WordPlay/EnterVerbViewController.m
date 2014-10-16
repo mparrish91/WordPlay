@@ -32,8 +32,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if (![self.verbTextField.text isEqualToString:@" "]) {
         EnterNounViewController *enterNounViewController = segue.destinationViewController;
-        enterNounViewController.name = self.name;
         enterNounViewController.verb = self.verbTextField.text;
+        enterNounViewController.name = self.name;
     }
 }
 
