@@ -27,10 +27,11 @@
     
     [attString beginEditing];
 
-    [attString addAttribute:NSFontAttributeName value:boldFont range:NSMakeRange(0, [self.name length])];
-    [attString addAttribute:NSFontAttributeName value:boldFont range:NSMakeRange(15, [self.verb length])];
-    [attString addAttribute:NSFontAttributeName value:boldFont range:NSMakeRange(34, [self.noun length])];
-    [attString addAttribute:NSFontAttributeName value:boldFont range:NSMakeRange(([infoString length] - 1), [self.adjective length])];
+    [attString addAttribute:NSFontAttributeName value:boldFont range:[attString.string rangeOfString:self.name]];
+    [attString addAttribute:NSFontAttributeName value:boldFont range:[attString.string rangeOfString:self.verb]];
+    [attString addAttribute:NSFontAttributeName value:boldFont range:[attString.string rangeOfString:self.noun]];
+    [attString addAttribute:NSFontAttributeName value:boldFont range:[attString.string rangeOfString:self.adjective]];
+
           
     [attString endEditing];
 
